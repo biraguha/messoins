@@ -1,0 +1,96 @@
+.active {
+    border-bottom: 1px solid #cc7777;
+}
+
+li a,
+.terms {
+    text-decoration: none;
+    position: relative;
+}
+
+li a:after,
+.terms::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    margin-bottom: -2px;
+    border-bottom: 1px solid #cc7777;
+    transition: 0.2s;
+}
+
+li a:hover,
+.terms:hover {
+    color: #cc7777;
+}
+
+li a:hover:after,
+.terms:hover::after {
+    width: 100%;
+}
+
+// Eye Effect
+.effect {
+    background-image: url("/assets/img/eye.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-color: #cc7777;
+    opacity: .9;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+}
+
+.terms {
+    color: #898989;
+}
+
+// Plus
+.more {
+    text-decoration: none;
+    padding: 15px 70px;
+    border: 2px solid #cc7777;
+    color: #cc7777;
+}
+
+.more:hover {
+    color: #dadada;
+    border-color: #dadada;
+}
+
+//Extra
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.effect {
+    -webkit-animation: fadeIn 2s;
+    animation: fadeIn 2s;
+}
+
+.effectUp {
+    -webkit-animation: fadeInUp 2s;
+    animation: fadeInUp 2s;
+}

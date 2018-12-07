@@ -1,0 +1,23 @@
+<div class="text-center conditions">
+    <a routerLink="/" class="no-underline text-white">TERMES ET CONDITIONS</a>
+</div>
+
+<hr class="text-white border-b mx-8">
+
+<div class="text-center">
+    
+    <ul class="flex justify-center items-center list-reset social">
+
+        <li *ngFor="let social of socials" class="mx-1">
+            <a [href]="social.url" target="_blank" class="bg-white flex items-center justify-center h-10 w-10 rounded-full">
+                <!-- <i class="text-black fab {{ social.icon }}"></i> -->
+                <fa-icon [icon]="social.icon" class="text-black"></fa-icon>
+            </a>
+        </li>
+    </ul>
+
+    <div class="copyright">
+        <p class="text-white">&copy; Copyright 2018. All Rights Reserved.</p>
+    </div>
+
+</div>

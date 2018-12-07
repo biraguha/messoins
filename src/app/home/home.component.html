@@ -1,0 +1,35 @@
+<div class="max-w-2xl ml-auto mr-auto">
+
+    <div class="mx-4">
+        <ul class="flex list-reset">
+            <li class="mr-8" *ngFor="let tab of tabs" (click)="selectTab(tab.type)" [class.active]="tab === selectedTab">
+                <span class="">
+                    <a routerLink="/" class="text-grey-pp overlay">{{ tab.type }}</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="flex content-start flex-wrap my-8">
+
+        <div *ngFor="let artist of filterArtists(selectedTab)" class="sm:w-1/2 md:w-1/3 p-4">
+            <div class="effectUp">
+                <div class="relative text-center" (mouseover)="artist.mouseOvered=true" (mouseout)="artist.mouseOvered=false">
+                    <img [src]="artist.url" class="artist" alt="PlayList">
+                    <div [class.effect]="artist.mouseOvered"></div>
+                </div>
+                <h3 class="text-grey-pp mt-4">{{ artist.info }}</h3>
+                <a routerLink="/" (click)="selectTab(artist.terms)" class="text-sm terms">{{ artist.terms }}</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="filterArtists(selectedTab).length >= 9" class="text-center">
+        <a *ngIf="!completed" routerLink="/" (click)="loadArtist()" class="more">Voir Plus</a>
+        <span *ngIf="loading">
+            <fa-icon [icon]="faCircleNotch" [spin]="true" size="lg" style="color: #898989;"></fa-icon>
+        </span>
+    </div>
+
+</div>

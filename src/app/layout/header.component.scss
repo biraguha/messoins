@@ -1,0 +1,143 @@
+$hamburger-layer-width                     : 20px !default;
+$hamburger-layer-height                    : 2px !default;
+$hamburger-layer-spacing                   : 4px !default;
+$hamburger-layer-color                     : #000 !default;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 10s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+$hamburger-types : (slider-r);
+
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+.img {
+    width: 250px;
+    height: 30px;
+}
+
+.active {
+    border-bottom: 1px solid #000;
+}
+
+.activem a {
+    color: #cc7777;
+}
+
+.overlaym:hover {
+    color: #cc7777;
+}
+
+.overlay {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.overlay:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #000;
+    transition: 0.4s;
+}
+
+.overlay:hover {
+    color: #000;
+}
+
+.overlay:hover:after {
+    width: 100%;
+}
+
+// Extra
+
+@-webkit-keyframes fadeInLeft {
+    0% {opacity: 0;-webkit-transform: translateX(20px);}
+    60% {-webkit-transform: translateX(0px);}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeInLeft {
+    0% {opacity: 0;transform: translateX(20px);}
+    60% {transform: translateX(0px);}
+    100% {opacity: 1;}
+}
+
+.fadeInLeft > li:nth-last-child(n+5) {
+    // transition-duration: 650ms;
+    // transition-delay: .3s;
+    -webkit-animation: fadeInLeft 10s;
+    animation: fadeInLeft 10s;
+}
+
+.fadeInLeft > li:nth-last-child(n+4) {
+    // transition-duration: 550ms;
+    // transition-delay: 240ms;
+    -webkit-animation: fadeInLeft 8s;
+    animation: fadeInLeft 8s;
+}
+
+.fadeInLeft > li:nth-last-child(n+3) {
+    // transition-duration: 450ms;
+    // transition-delay: 180ms;
+    -webkit-animation: fadeInLeft 6s;
+    animation: fadeInLeft 6s;
+}
+
+.fadeInLeft > li:nth-last-child(n+2) {
+    // transition-duration: 350ms;
+    // transition-delay: 120ms;
+    -webkit-animation: fadeInLeft 4s;
+    animation: fadeInLeft 4s;
+}
+
+.fadeInLeft > li:nth-last-child(n+1) {
+    // transition-duration: 250ms;
+    // transition-delay: 60ms;
+    -webkit-animation: fadeInLeft 2s;
+    animation: fadeInLeft 2s;
+}
+
+/// Right
+
+@-webkit-keyframes fadeInRight {
+    0% {opacity: 1;-webkit-transform: translateX(0);}
+    30% {-webkit-transform: translateX(-50px);}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeInRight {
+    0% {opacity: 1;transform: translateX(0px);}
+    30% {transform: translateX(-50px);}
+    100% {opacity: 0;}
+}
+
+.fadeInRight > li:nth-last-child(n+5) {
+    -webkit-animation: fadeInRight 2s;
+    animation: fadeInRight 2s;
+}
+
+.fadeInRight > li:nth-last-child(n+4) {
+    -webkit-animation: fadeInRight 4s;
+    animation: fadeInRight 4s;
+}
+
+.fadeInRight > li:nth-last-child(n+3) {
+    -webkit-animation: fadeInRight 6s;
+    animation: fadeInRight 6s;
+}
+
+.fadeInRight > li:nth-last-child(n+2) {
+    -webkit-animation: fadeInRight 8s;
+    animation: fadeInRight 8s;
+}
+
+.fadeInRight > li:nth-last-child(n+1) {
+    -webkit-animation: fadeInRight 10s;
+    animation: fadeInRight 10s;
+}

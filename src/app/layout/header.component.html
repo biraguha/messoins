@@ -1,0 +1,38 @@
+<header class="flex items-center justify-between max-w-2xl ml-auto mr-auto" style="padding: 40px 10px">
+
+        <a routerLink="">
+            <img class="img" src="assets/img/logo-header.png" alt="messoins.com">
+        </a>
+    
+        <div class="flex items-center">
+    
+            <div *ngIf="showNav" (click)="toggle()" class="md:hidden z-10 absolute pin bg-black opacity-50"></div>
+            <nav [hidden]="!showNav" class="z-10 absolute bg-white pin w-1/2 md:w-full md:relative">
+                <ul class="flex flex-col h-full md:flex-row md:text-right list-reset" [class.fadeInLeft]="showNav" [class.fadeInRight]="!showNav">
+                    <li *ngFor="let nav of navs" class="mx-6 my-4 md:mx-0 md:mr-6" [ngClass]="{
+                        active: !isMobile() && nav.name === 'Projets',
+                        activem: isMobile() && nav.name === 'Projets'
+                    }">
+                        <a routerLink="/" class="text-black no-underline text-3xl md:text-base" [ngClass]="{
+                            overlay: !isMobile(),
+                            overlaym: isMobile()
+                        }">{{ nav.name }}</a>
+                    </li>
+                    <li *ngIf="isMobile() && showNav" class="mx-6 my-4 md:mx-0 md:mr-6">
+                        <div [class.text-pink-pp]="search.value.length > 0">
+                            <fa-icon [icon]="faSearch" size="lg"></fa-icon>
+                            <input #search (keyup)="0" type="search" class="focus:text-pink-pp text-xl ml-4" placeholder="Search site...">
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+    
+            <div (click)="toggle()" [class.is-active]="showNav" class="hamburger hamburger--slider-r">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+    
+        </div>
+    
+    </header>
