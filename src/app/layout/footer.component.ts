@@ -6,7 +6,7 @@ import {
     faYoutube,
     faSoundcloud,
     faTwitter
-} from "@fortawesome/fontawesome-free-brands";
+} from "@fortawesome/free-brands-svg-icons";
 
 interface ISocial {
     name: string;
